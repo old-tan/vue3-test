@@ -1,20 +1,20 @@
-import { createStore } from 'vuex'
-import { INCREMENT_N } from './mutation-types'
+import { createStore } from "vuex"
+import { INCREMENT_N } from "./mutation-types"
 
 const store = createStore({
   state() {
     return {
       counter: 222,
-      name: 'tan',
+      name: "tan",
       age: 18,
       books: [
-        { name: 'vue', price: 200, count: 2 },
-        { name: 'react', price: 300, count: 2 },
-        { name: 'webpack', price: 125, count: 4 },
-        { name: 'vite', price: 100, count: 3 },
-        { name: 'angular', price: 223, count: 5 }
+        { name: "vue", price: 200, count: 2 },
+        { name: "react", price: 300, count: 2 },
+        { name: "webpack", price: 125, count: 4 },
+        { name: "vite", price: 100, count: 3 },
+        { name: "angular", price: 223, count: 5 },
       ],
-      discount: 0.9
+      discount: 0.9,
     }
   },
   mutations: {
@@ -26,7 +26,7 @@ const store = createStore({
     },
     decrement(state) {
       state.counter--
-    }
+    },
   },
   getters: {
     currentCiscount(state) {
@@ -54,8 +54,8 @@ const store = createStore({
     },
     ageInfo(state) {
       return `age: ${state.age}`
-    }
-  }
+    },
+  },
 })
 
 export default store

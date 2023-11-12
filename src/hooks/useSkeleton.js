@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref } from "vue"
 
 export function useSkeleton(initValue = true) {
   const loading = ref(initValue)
@@ -8,6 +8,6 @@ export function useSkeleton(initValue = true) {
   }, 3000)
 
   return {
-    loading
+    loading,
   }
 }

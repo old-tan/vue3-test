@@ -9,13 +9,13 @@
 </template>
 
 <script setup>
-import { useGetters } from '../hooks'
+import { useGetters } from "../hooks"
 
 const { nameInfo, ageInfo, totalPrice, totalPriceMoreThanThree } = useGetters([
-  'nameInfo',
-  'ageInfo',
-  'totalPrice',
-  'totalPriceMoreThanThree'
+  "nameInfo",
+  "ageInfo",
+  "totalPrice",
+  "totalPriceMoreThanThree",
 ])
 // const {
 //   sName,
