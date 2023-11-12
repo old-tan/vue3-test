@@ -1,5 +1,5 @@
-import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { computed } from "vue"
+import { useStore } from "vuex"
 
 export function useMapper(mapper, mapFn) {
   const store = useStore()
@@ -10,7 +10,7 @@ export function useMapper(mapper, mapFn) {
 
   Object.keys(storeGetterFns).forEach((fnKey) => {
     const fn = storeGetterFns[fnKey].bind({ $store: store })
-    storeGetters[fnKey] = fn.name === 'bound mappedMutation' ? fn : computed(fn)
+    storeGetters[fnKey] = fn.name === "bound mappedMutation" ? fn : computed(fn)
   })
 
   return storeGetters

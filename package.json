@@ -5,7 +5,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:eslint": "eslint \"src/**/*.{vue,ts,js}\" --fix",
+    "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\"",
+    "prepare": "husky install",
+    "lint:lint-staged": "lint-staged",
+    "commit": "git-cz"
   },
   "dependencies": {
     "element-plus": "^2.3.6",
@@ -15,11 +20,41 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.0",
+    "@commitlint/config-conventional": "^18.4.0",
     "@intlify/unplugin-vue-i18n": "^0.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
     "@vitejs/plugin-vue": "^4.2.3",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.1",
+    "eslint": "^8.53.0",
+    "eslint-plugin-vue": "^9.18.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.0.3",
     "rollup-plugin-visualizer": "^5.9.2",
     "unplugin-auto-import": "^0.16.4",
     "unplugin-vue-components": "^0.25.1",
     "vite": "^4.3.9"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{cjs,json}": [
+      "prettier --write"
+    ],
+    "*.{vue,html}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{scss,css,less}": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }

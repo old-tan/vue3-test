@@ -12,15 +12,15 @@
       <BookList /> -->
     </div>
     <div>
-      <form style="padding: 20px 0;">
-        <label>{{ $t('language') }}</label>
+      <form style="padding: 20px 0">
+        <label>{{ $t("language") }}</label>
         <select v-model="locale">
           <option value="en">en</option>
           <option value="zh">zh</option>
         </select>
       </form>
-      <p>{{ $t('hello') }}</p>
-      <p>{{ $t('myName', { name: 'airy' }) }}</p>
+      <p>{{ $t("hello") }}</p>
+      <p>{{ $t("myName", { name: "airy" }) }}</p>
       <p v-t="{ path: 'welcome', args: { name: 'airy' } }"></p>
     </div>
     <router-link to="/">Home</router-link>
@@ -68,32 +68,18 @@
 </template>
 
 <script setup>
-import HomePage from './views/HomePage.vue'
-import BookList from './views/BookList.vue'
-import { reactive } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { INCREMENT_N } from './store/mutation-types'
-import { useState, useMutations } from './hooks'
-
+import { reactive } from "vue"
+import { useI18n } from "vue-i18n"
+import { INCREMENT_N } from "./store/mutation-types"
+import { useState, useMutations } from "./hooks"
 
 const { t, locale } = useI18n()
-
-
-const {
-  counter: sCounter,
-  name: sName,
-  age: sAge
-} = useState(['counter', 'name', 'age'])
-
+console.log(t)
+const { counter: sCounter, name: sName, age: sAge } = useState(["counter", "name", "age"])
 const userInfo = reactive({
-  n: 10
+  n: 10,
 })
-
-const { increment, decrement, increment_n } = useMutations([
-  'increment',
-  'decrement',
-  INCREMENT_N
-])
+const { increment, decrement, increment_n } = useMutations(["increment", "decrement", INCREMENT_N])
 
 // import {
 //   useCounter,

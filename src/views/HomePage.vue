@@ -8,12 +8,8 @@
 </template>
 
 <script setup>
-import { useState } from '../hooks'
-const {
-  counter: sCounter,
-  name: sName,
-  age: sAge
-} = useState(['counter', 'name', 'age'])
+import { useState } from "../hooks"
+const { counter: sCounter, name: sName, age: sAge } = useState(["counter", "name", "age"])
 // const {
 //   counter: sCounter,
 //   name: sName,

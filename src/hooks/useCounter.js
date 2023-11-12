@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref } from "vue"
 
 export function useCounter(initValue = 0) {
   const counter = ref(initValue)
@@ -14,6 +14,6 @@ export function useCounter(initValue = 0) {
   return {
     counter,
     addCounter,
-    subCounter
+    subCounter,
   }
 }
