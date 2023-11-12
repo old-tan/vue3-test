@@ -26,7 +26,6 @@
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
     <router-view />
-    <h1>测试git提交</h1>
 
     <!-- <div id="string-syntax">
       <p v-t="'hello'"></p>
